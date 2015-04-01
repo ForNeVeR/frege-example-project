@@ -1,8 +1,6 @@
 buildscript {
   repositories {
-    maven {
-      url = 'https://oss.sonatype.org/content/groups/public'
-    }
+    mavenCentral()
   }
   dependencies {
     classpath group: 'org.frege-lang', name: 'frege-gradle-plugin', version: '0.2'
@@ -14,14 +12,11 @@ apply plugin: 'frege'
 apply plugin: 'application'
 
 repositories {
-  maven {
-    url = 'https://oss.sonatype.org/content/groups/public'
-    mavenCentral()
-  }
+  mavenCentral()
 }
 
 dependencies {
-  compile group: 'com.theoryinpractise.frege', name: 'frege', version: '3.22.367-g2737683'
+  compile group: 'org.frege-lang', name: 'frege', version: '3.22.367-g2737683'
 }
 
 mainClassName = 'me.fornever.example.Application'
