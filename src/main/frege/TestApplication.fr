@@ -1,0 +1,14 @@
+module me.fornever.example.TestApplication where
+
+import frege.test.QuickCheck
+import me.fornever.example.Application (greetingTestIO)
+
+checkResult :: Result -> Int
+checkResult Success {} = 0
+checkResult _ = 1
+
+main :: [String] -> IO Int
+main _ = do
+    greetingProperty <- greetingTestIO
+    result <- quickCheckResult greetingProperty
+    return $ checkResult result

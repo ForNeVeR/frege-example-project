@@ -19,4 +19,4 @@ dependencies {
   compile group: 'org.frege-lang', name: 'frege', version: '3.22.367-g2737683'
 }
 
-mainClassName = 'me.fornever.example.Application'
+mainClassName = System.getProperty("mainClass") ?: 'me.fornever.example.Application'
