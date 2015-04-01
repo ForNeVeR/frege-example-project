@@ -9,3 +9,6 @@ import frege.test.QuickCheck
 
 greetingTest :: Property
 greetingTest = property $ \f -> greeting f == "Hello, " ++ f ++ "!"
+
+greetingTestIO :: IO Property
+greetingTestIO = return greetingTest
