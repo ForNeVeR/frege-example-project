@@ -4,3 +4,8 @@ greeting friend = "Hello, " ++ friend ++ "!"
 
 main args = do
     println (greeting "World")
+
+import frege.test.QuickCheck
+
+greetingTest :: Property
+greetingTest = property $ \f -> greeting f == "Hello, " ++ f ++ "!"
